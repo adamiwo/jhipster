@@ -1,0 +1,33 @@
+{
+  "name": "UsersList",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "javadoc": "The firstname attribute."
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adress",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "users_list",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210916061856"
+}

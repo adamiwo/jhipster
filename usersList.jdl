@@ -1,0 +1,17 @@
+
+entity UsersList {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	adress String,
+}
+
+
+paginate UsersList with pagination
+filter * 
+service * with serviceClass
+
+

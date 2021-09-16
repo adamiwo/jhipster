@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-users-list-heading" data-cy="UsersListCreateUpdateHeading" jhiTranslate="jhipsterApp.usersList.home.createOrEditLabel">
+        Create or edit a Users List
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="jhipsterApp.usersList.firstName"
+            for="field_firstName"
+            [ngbTooltip]="'jhipsterApp.usersList.help.firstName' | translate"
+            >First Name</label
+          >
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+
+          <div *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('firstName')?.errors?.required"> First Name is required. </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('firstName')?.errors?.minlength">
+              First Name is required to be at least 1 character.
+            </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('firstName')?.errors?.maxlength">
+              First Name cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterApp.usersList.lastName" for="field_lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+          <div *ngIf="editForm.get('lastName')!.invalid && (editForm.get('lastName')!.dirty || editForm.get('lastName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('lastName')?.errors?.required"> Last Name is required. </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('lastName')?.errors?.minlength">
+              Last Name is required to be at least 1 character.
+            </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('lastName')?.errors?.maxlength">
+              Last Name cannot be longer than 50 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterApp.usersList.email" for="field_email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+          <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('email')?.errors?.required"> Email is required. </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('email')?.errors?.invalid"> Email is invalid. </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('email')?.errors?.minlength">
+              Email is required to be at least 5 characters.
+            </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('email')?.errors?.maxlength">
+              Email cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="jhipsterApp.usersList.adress" for="field_adress">Adress</label>
+          <input type="text" class="form-control" name="adress" id="field_adress" data-cy="adress" formControlName="adress" />
+          <div *ngIf="editForm.get('email')!.invalid && (editForm.get('email')!.dirty || editForm.get('email')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('adress')?.errors?.required"> Adress is required. </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('adress')?.errors?.invalid"> Adress is invalid. </small>
+
+            <small class="form-text text-danger" *ngIf="editForm.get('adress')?.errors?.minlength">
+              Adress is required to be at least 5 characters.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

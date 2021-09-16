@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="usersList">
+      <h2 data-cy="usersListDetailsHeading"><span jhiTranslate="jhipsterApp.usersList.detail.title">Users List</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ usersList.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterApp.usersList.firstName" [ngbTooltip]="'jhipsterApp.usersList.help.firstName' | translate"
+            >First Name</span
+          >
+        </dt>
+        <dd>
+          <span>{{ usersList.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.usersList.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ usersList.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.usersList.email">Email</span></dt>
+        <dd>
+          <span>{{ usersList.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterApp.usersList.adress">Adress</span></dt>
+        <dd>
+          <span>{{ usersList.adress }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/users-list', usersList.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

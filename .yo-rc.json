@@ -42,6 +42,8 @@
     "devServerPort": 4200,
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en", "de", "pl"]
+    "languages": ["en", "de", "pl"],
+    "entities": ["UsersList"],
+    "lastLiquibaseTimestamp": 1631773136000
   }
 }

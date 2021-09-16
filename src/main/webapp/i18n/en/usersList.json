@@ -1,0 +1,30 @@
+{
+  "jhipsterApp": {
+    "usersList": {
+      "home": {
+        "title": "Users Lists",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new User",
+        "createOrEditLabel": "Create or edit a Users List",
+        "notFound": "No Users Lists found"
+      },
+      "created": "A new Users List is created with identifier {{ param }}",
+      "updated": "A Users List is updated with identifier {{ param }}",
+      "deleted": "A Users List is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Users List {{ id }}?"
+      },
+      "detail": {
+        "title": "Users List"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "adress": "Adress",
+      "help": {
+        "firstName": "The firstname attribute."
+      }
+    }
+  }
+}
